@@ -1,0 +1,41 @@
+.accountListContainer{
+    margin-top: 2vw;
+    padding: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.accountDetailsWrapper{
+    display: flex;
+    width: 15vw;
+    color: #505050;
+    border: none;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    border-radius: 2vw;
+    padding: 0 1vw;
+}
+
+.accountDetailsWrapper:hover{
+    background-color:pink;
+}
+
+.accountDetails{
+    display: flex;
+    margin: 1vw;
+}
+
+.actionButton
+{
+    border-radius: 2vw;
+    border-width: 1px;
+    background-color: transparent;
+}
+
+.actionButton:hover
+{
+    background-color: red;
+    color: white;
+}

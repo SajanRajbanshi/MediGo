@@ -1,0 +1,12 @@
+{
+    "signinButton":0,
+    "signupButton":0,
+    "switchToSignin":0,
+    "switchToSignup":0,
+    "googleAuth":0,
+    "signinEmailInputBox":0,
+    "signinPasswordInputBox":0,
+    "signupEmailInputBox":0,
+    "signupPasswordInputBox":0,
+    "signupRepasswordInputBox":0
+}

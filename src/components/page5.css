@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@keyframes slow_appear {
+    0%{
+        height: 0px;
+    }
+    100%{
+        height:15vw;
+    }
+    
+}
+@keyframes slow_disappear {
+    0%{
+        height: 15vw;
+    }
+    100%{
+        height:0px;
+    }
+}
+
+
+.page5{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#7ED957,#f5f5f5);
+    z-index: 0;
+}
+.glassdiv_faq{
+    width: 90vw;
+    height: 60%;
+    background:linear-gradient(270deg,rgb(255,255,255,0.2),rgb(255,255,255,0.1));
+    border:solid 2px rgb(255,255,255,0.2);
+    border-radius: 2vw;
+    box-shadow: 0px 0px 10px rgba(3, 3, 3, 0.1);
+    backdrop-filter: blur(30px);
+    animation-name: appear1;
+    animation-duration: 1ms;
+    animation-timing-function: linear;
+    animation-timeline: view(block 80% 0%); 
+}
+
+.faq_container{
+    margin: 3vw 3vw;
+    font-family: "k2d";
+
+}
+
+.faq_question{
+    margin: 2vw 0 2vw 0;
+    background:none;
+    border: none;
+    font-size: 2vw;
+    font-weight: 500;
+    text-align: left;
+}
+
+.hide{
+    margin: 0 2vw 0 2vw;
+    font-size: 2vw;
+    overflow: hidden;
+    color: #848484;
+    text-align: justify;
+    animation-name: slow_disappear;
+    animation-delay: 0s;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.show{
+    margin: 0 2vw 0 2vw;
+    font-size: 2vw;
+    height: 0px;
+    overflow: hidden;
+    color: #848484;
+    text-align: justify;
+    animation-name: slow_appear;
+    animation-delay: 0.3s;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+.motivation{
+    margin: 10vw 0 0 0;
+    font-size: 1.5vw;
+    color: #aaaaaa;
+}

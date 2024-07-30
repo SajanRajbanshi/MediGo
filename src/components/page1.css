@@ -1,0 +1,69 @@
+.page1{
+    background: linear-gradient(#ffffff,#aaaaaa);
+    position: relative;
+    z-index: 0;
+    height: 55vw;
+    display: flex;
+    z-index: 0;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    align-items: center;
+}
+.slogan{
+    font-size: 8vw;
+    text-align: center;
+    font-weight: 500;
+}
+.sloganblue{
+    color: #6FC3DF;
+}
+.slogangreen{
+    color:#7ED957;
+}
+.bio
+{
+    text-align: center;
+    color: #aaaaaa;
+    font-weight: 500;
+    font-size: 2vw;
+}
+.btn_Join_Us{
+    display: flex;
+    margin-top: 1.5vw;
+    justify-content: center;
+    z-index: 1;
+}
+.Join_Us{
+    padding:1vw 2vw;
+    border-radius: 3vw;
+    border: none;
+    font-size: 2vw;
+    width: fit-content;
+    height: fit-content;
+    background:linear-gradient(90deg,#7ED957,#6FC3DF,#7ED957,#6FC3DF);
+    background-size: 250%;
+    background-position: left;
+    transition: 1s;
+    z-index: 1;
+}
+.Join_Us:hover{
+    transition: 0.5;
+    background-position: right;
+    transform: scale(1.1);
+    z-index: 1;
+}
+.earphone1{
+    position: absolute;
+    width: 50vw;
+    rotate: 17deg;
+    left: -15%;
+    top: 16%;
+}
+.earphone2{
+    position: absolute;
+    width: 50vw;
+    rotate: 224deg;
+    right: -15%;
+    bottom: -15%;
+}
