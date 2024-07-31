@@ -31,8 +31,11 @@ export default function Header() {
                         </span>
                         <span
                             className="tab dim"
-                            id="tab">
-                            About
+                            id="tab"
+                        >
+                            <Link to='/about'>
+                                About
+                            </Link>
                         </span>
                         <div
                             className="pricing"
@@ -40,7 +43,9 @@ export default function Header() {
                             <span
                                 className="tab gradient"
                                 id="tab">
-                                Pricing
+                                <Link to='/subscription'>
+                                    Pricing
+                                </Link>
                             </span>
                         </div>
                     </div>

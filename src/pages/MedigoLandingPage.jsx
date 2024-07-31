@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import '../App.css'
 import Signupin from '../components/landingPageComponents/Signupin';
 import LandingPage from '../components/landingPageComponents/LandingPage';
+import AboutUsPage from "./AboutUsPage";
+import SubscriptionPage from "./SubscriptionPage";
 
 
 export default function MedigoLandingPage()
@@ -13,6 +15,14 @@ export default function MedigoLandingPage()
               exact path='/'
               element={<LandingPage />}>
             </Route>
+            <Route
+              path="/about"
+              element={<AboutUsPage/>}
+            />
+            <Route
+              path="/subscription"
+              element={<SubscriptionPage/>}
+            />
             <Route
               exact path='/Signin'
               element={
