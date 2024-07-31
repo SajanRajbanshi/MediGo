@@ -1,15 +1,13 @@
 import "./signinInput.css";
 import { IoCaretDownCircleSharp, IoEye } from "react-icons/io5";
-import AccountList from "./AccountList";
 import { IoMdEyeOff } from "react-icons/io";
 import { useEffect, useState, useRef } from "react";
-import interfaceDateFromDb from "./Database.json";
+import { Link } from "react-router-dom";
 
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
 export default function SigninInput(props) {
-  const [active, setActive] = useState(false);
   const [isPasswordVisible, setPasswordVisibility] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -17,13 +15,6 @@ export default function SigninInput(props) {
   const usernameInput = useRef(null);
   const passwordInput = useRef(null);
 
-  function showSignedinAccountMenu() {
-    setActive(true);
-  }
-
-  function hideSignedinAccountMenu() {
-    setActive(false);
-  }
 
   function handleUsernameChange(event) {
     usernameInput.current.value = event.target.value;
@@ -35,33 +26,13 @@ export default function SigninInput(props) {
     setPassword(passwordInput.current.value);
   }
 
-  function setCredentials(thisOne) {
-    console.log(thisOne);
-    setUsername(thisOne);
-    setPassword(props.signedInAccountsDict[thisOne]);
-  }
-
-  function performSignin() {
-    console.log(
-      "username:",
-      usernameInput.current.value,
-      "password:",
-      passwordInput.current.value
-    );
-    let newUser = {
-      userName: usernameInput.current.value,
-      password: passwordInput.current.value,
-    };
-    props.addAccountMethod(newUser);
-  }
-
 
   return (
+    <>
     <div className="signinInputComponent" id="signinInputComponent">
       <section
         className="page1Signin"
         id="page1Signin"
-        onMouseLeave={hideSignedinAccountMenu}
       >
         <div
           style={{
@@ -111,9 +82,6 @@ export default function SigninInput(props) {
                   type="text"
                   value={username}
                   ref={usernameInput}
-                  onClick={() => {
-                    showSignedinAccountMenu();
-                  }}
                   onChange={handleUsernameChange}
                   label="Username"
                   fullWidth
@@ -158,9 +126,6 @@ export default function SigninInput(props) {
             <div className="button_signin" id="button_signin">
               <Button
                 variant="outlined"
-                onClick={() => {
-                  performSignin();
-                }}
               >
                 Sign in
               </Button>
@@ -172,29 +137,53 @@ export default function SigninInput(props) {
           <div className="smallcircle1" id="smallcircle1"></div>
           <div className="smallcircle2" id="smallcircle2"></div>
         </div>
-
-        {Object.keys(props.signedInAccountsDict).length === 0 ? (
-          <></>
-        ) : (
-          <div
-            className={active ? "signedinAccountShow" : "signedinAccountHide"}
-            id="signedinAccount"
-          >
-            <button
-              onClick={hideSignedinAccountMenu}
-              className="signedInAccountMenuCloseButton"
-              id="signedInAccountMenuCloseButton"
-            >
-              X
-            </button>
-            <AccountList
-              onDelete={props.method}
-              onSetCredentials={setCredentials}
-              signedInAccountsDict={props.signedInAccountsDict}
-            />
-          </div>
-        )}
       </section>
     </div>
+    <div className="moreoptions" id="moreoptions">
+      <div
+        style={{
+          width: "50%",
+          minWidth: "400px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <button
+          className="google"
+          id="google"
+        >
+          Continue with Google
+        </button>
+      </div>
+      <div
+        style={{
+          width: "50%",
+          minWidth: "400px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <span>Don't have an Account?</span>
+          <Link to="/auth/signup">
+          <button
+            className="signupAuth"
+            id="signupAuth"
+          >
+            Sign up
+          </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+    </>
   );
 }
