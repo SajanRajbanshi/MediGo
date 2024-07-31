@@ -31,7 +31,6 @@ export default function Signupin(props) {
 
   return (
     <div className="bodySign" id="bodySign">
-      {console.log("header rendered")}
       <div className="headerSign" id="headerSign">
         <div className="headerdivSign" id="headerdivSign">
           <div className="leftSign" id="left">
@@ -56,13 +55,6 @@ export default function Signupin(props) {
             </div>
           </div>
           <div className="signupinright" id="right">
-            {/* <img
-              src={profileImage}
-              alt="profileIcon"
-              className="profileIcon"
-              id="profileIcon"
-            />
-            {Object.keys(accountDict).length} */}
             <Badge
               anchorOrigin={{
                 vertical: "top",

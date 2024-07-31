@@ -9,14 +9,8 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
 export default function SigninInput(props) {
-  console.log("in signinInput", props.signedInAccountsDict);
   const [active, setActive] = useState(false);
   const [isPasswordVisible, setPasswordVisibility] = useState(false);
-  const [interfaceDate, setInterfaceData] = useState({
-    signinEmailInputBoxTapCount: 0,
-    signinPasswordInputBoxTapCount: 0,
-    signinButtonTapCount: 0,
-  });
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -34,20 +28,17 @@ export default function SigninInput(props) {
   function handleUsernameChange(event) {
     usernameInput.current.value = event.target.value;
     setUsername(usernameInput.current.value);
-    console.log("username:", usernameInput.current.value);
   }
 
   function handlePasswordChange(event) {
     passwordInput.current.value = event.target.value;
     setPassword(passwordInput.current.value);
-    console.log("password:", passwordInput.current.value);
   }
 
   function setCredentials(thisOne) {
     console.log(thisOne);
     setUsername(thisOne);
     setPassword(props.signedInAccountsDict[thisOne]);
-    console.log("credentials set");
   }
 
   function performSignin() {
@@ -64,17 +55,6 @@ export default function SigninInput(props) {
     props.addAccountMethod(newUser);
   }
 
-  useEffect(() => {
-    return () => {
-      console.log(
-        interfaceDateFromDb.signinPasswordInputBox +
-          interfaceDate.signinPasswordInputBoxTapCount,
-        interfaceDateFromDb.signinEmailInputBox +
-          interfaceDate.signinEmailInputBoxTapCount,
-        interfaceDateFromDb.signinButton + interfaceDate.signinButtonTapCount
-      );
-    };
-  }, []);
 
   return (
     <div className="signinInputComponent" id="signinInputComponent">
@@ -126,26 +106,12 @@ export default function SigninInput(props) {
             <div className="placeholder" id="placeholder"></div>
             <div className="inputbox" id="inputbox1">
               <div className="inputBoxWrapper" id="inputBoxWrapper1">
-                {/* <input
-                  type="text"
-                  className="ipbox"
-                  id="ipbox1"
-                  onChange={handleUsernameChange}
-                  ref={user}
-                  onClick={() => {
-                    interfaceDate.signinEmailInputBoxTapCount++;
-                    setInterfaceData(interfaceDate);
-                    showSignedinAccountMenu();
-                  }}
-                /> */}
                 <TextField
                   variant="outlined"
                   type="text"
                   value={username}
                   ref={usernameInput}
                   onClick={() => {
-                    interfaceDate.signinEmailInputBoxTapCount++;
-                    setInterfaceData(interfaceDate);
                     showSignedinAccountMenu();
                   }}
                   onChange={handleUsernameChange}
@@ -158,17 +124,6 @@ export default function SigninInput(props) {
             <div className="placeholder" id="placeholder"></div>
             <div className="inputbox" id="inputbox2">
               <div className="inputBoxWrapper" id="inputBoxWrapper2">
-                {/* <input
-                  type={isPasswordVisible ? "text" : "password"}
-                  className="ipbox"
-                  id="ipbox2"
-                  ref={pass}
-                  onChange={handlePasswordChange}
-                  onClick={() => {
-                    interfaceDate.signinPasswordInputBoxTapCount++;
-                    setInterfaceData(interfaceDate);
-                  }}
-                /> */}
                 <TextField
                   fullWidth
                   required
@@ -178,10 +133,6 @@ export default function SigninInput(props) {
                   type={isPasswordVisible ? "text" : "password"}
                   ref={passwordInput}
                   onChange={handlePasswordChange}
-                  onClick={() => {
-                    interfaceDate.signinPasswordInputBoxTapCount++;
-                    setInterfaceData(interfaceDate);
-                  }}
                 />
                 <button
                   className="passwordVisibilityToggle"
@@ -205,24 +156,9 @@ export default function SigninInput(props) {
               </div>
             </div>
             <div className="button_signin" id="button_signin">
-              {/* <div className="button_wrapper" id="button_wrapper">
-                <button
-                  className="signinInput"
-                  id="signinInput"
-                  onClick={() => {
-                    interfaceDate.signinButtonTapCount++;
-                    setInterfaceData(interfaceDate);
-                    performSignin();
-                  }}
-                >
-                  Sign in
-                </button>
-              </div> */}
               <Button
                 variant="outlined"
                 onClick={() => {
-                  interfaceDate.signinButtonTapCount++;
-                  setInterfaceData(interfaceDate);
                   performSignin();
                 }}
               >

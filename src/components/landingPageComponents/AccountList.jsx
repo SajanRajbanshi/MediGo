@@ -3,7 +3,7 @@ import "./accountList.css";
 import Stack from "@mui/material/Stack";
 import { Button, Typography } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import Divider from "@mui/material/Divider";
+
 
 export default function AccountList(props) {
   const usersArray = Object.entries(props.signedInAccountsDict);
@@ -16,30 +16,10 @@ export default function AccountList(props) {
         id="accountListContainer"
         divider={<hr />}
       >
-        {usersArray.map(([userName, password]) => {
+        {usersArray.map(([userName, password],index) => {
           return (
-            //   <div key={userName}>
-            //     <button
-            //       className="accountDetailsWrapper"
-            //       id="accountDetailsWrapper"
-            //     >
-            //       <div className="accountDetails" id="accountDetails">
-            //         {userName}
-            //       </div>
-            //       <div>
-            //         <button
-            //           className="actionButton"
-            //           id="actionButton"
-            //           onClick={() => {
-            //             props.method(userName);
-            //           }}
-            //         >
-            //           Delete
-            //         </button>
-            //       </div>
-            //     </button>
-            //   </div>
               <Stack
+                key={`Account${index}`}
                 direction={"row"}
                 spacing={1}
                 width={"100%"}
