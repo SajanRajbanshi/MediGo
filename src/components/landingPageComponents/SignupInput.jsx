@@ -7,12 +7,6 @@ import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
 
 export default function SignupInput() {
-  const [interfaceDate, setInterfaceData] = useState({
-    signupButtonTapCount: 0,
-    signupEmailInputBoxTapCount: 0,
-    signupPasswordInputBoxTapCount: 0,
-    signupRepasswordInputBoxTapCount: 0,
-  });
   const [isPasswordVisible, setPasswordVisibility] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -36,20 +30,6 @@ export default function SignupInput() {
     repasswordInput.current = event.target.value;
     setRepassword(repasswordInput.current);
   }
-
-  useEffect(() => {
-    return () => {
-      console.log(
-        interfaceDateFromDb.signinButton + interfaceDate.signupButtonTapCount,
-        interfaceDateFromDb.signinEmailInputBox +
-          interfaceDate.signupEmailInputBoxTapCount,
-        interfaceDateFromDb.signinPasswordInputBox +
-          interfaceDate.signupPasswordInputBoxTapCount,
-        interfaceDateFromDb.signupRepasswordInputBox +
-          interfaceDate.signupRepasswordInputBoxTapCount
-      );
-    };
-  }, []);
   return (
     <div>
       <div className="page1Signup" id="page1Signup">
@@ -103,16 +83,6 @@ export default function SignupInput() {
             <div className="placeholder" id="placeholder"></div>
             <div className="inputbox" id="inputbox1">
               <div className="inputBoxWrapper">
-                {/* <input
-                  type="text"
-                  className="ipbox"
-                  name="email"
-                  id="email"
-                  onClick={() => {
-                    interfaceDate.signupEmailInputBoxTapCount++;
-                    setInterfaceData(interfaceDate);
-                  }}
-                /> */}
                 <TextField
                   fullWidth
                   type="email"
@@ -120,35 +90,17 @@ export default function SignupInput() {
                   value={email}
                   onChange={handleEmailInputChange}
                   required
-                  onClick={() => {
-                    interfaceDate.signupEmailInputBoxTapCount++;
-                    setInterfaceData(interfaceDate);
-                  }}
                 />
               </div>
             </div>
             <div className="placeholder" id="placeholder"></div>
             <div className="inputbox" id="inputbox2">
               <div className="inputBoxWrapper">
-                {/* <input
-                  type={isPasswordVisible ? "text" : "password"}
-                  className="ipbox"
-                  name="password"
-                  id="password"
-                  onClick={() => {
-                    interfaceDate.signupPasswordInputBoxTapCount++;
-                    setInterfaceData(interfaceDate);
-                  }}
-                /> */}
                 <TextField
                   type={isPasswordVisible ? "text" : "password"}
                   label="Password"
                   value={password}
                   onChange={handlePasswordInputChange}
-                  onClick={() => {
-                    interfaceDate.signupPasswordInputBoxTapCount++;
-                    setInterfaceData(interfaceDate);
-                  }}
                   fullWidth
                   required
                 />
@@ -176,16 +128,6 @@ export default function SignupInput() {
             <div className="placeholder" id="placeholder"></div>
             <div className="inputbox" id="inputbox3">
               <div className="inputBoxWrapper">
-                {/* <input
-                  type={isPasswordVisible ? "text" : "password"}
-                  className="ipbox"
-                  name="re_password"
-                  id="re_password"
-                  onClick={() => {
-                    interfaceDate.signupRepasswordInputBoxTapCount++;
-                    setInterfaceData(interfaceDate);
-                  }}
-                /> */}
                 <TextField
                   fullWidth
                   value={repassword}
@@ -193,10 +135,6 @@ export default function SignupInput() {
                   label="Re-Password"
                   type={isPasswordVisible ? "text" : "password"}
                   required
-                  onClick={() => {
-                    interfaceDate.signupRepasswordInputBoxTapCount++;
-                    setInterfaceData(interfaceDate);
-                  }}
                 />
                 <button
                   onClick={() => {
@@ -220,23 +158,7 @@ export default function SignupInput() {
               </div>
             </div>
             <div className="button_signin" id="button_signin">
-              {/* <div className="button_wrapper" id="button_wrapper">
-                <button
-                  className="signupInput"
-                  id="signin"
-                  onClick={() => {
-                    interfaceDate.signupButtonTapCount++;
-                    setInterfaceData(interfaceDate);
-                  }}
-                >
-                  Sign up
-                </button>
-              </div> */}
               <Button
-                onClick={() => {
-                  interfaceDate.signupButtonTapCount++;
-                  setInterfaceData(interfaceDate);
-                }}
                 variant="outlined"
               >
                 Sign up
