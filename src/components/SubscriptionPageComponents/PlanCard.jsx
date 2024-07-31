@@ -96,6 +96,12 @@ const PlanCard = ({ planType, planDetails }) => {
                             background: blue[500],
                             color: 'white',
                             borderRadius: '19px',
+                            ':hover': {
+                                background: blue[500],
+                                color: 'white',
+                                transition: '0.1s',
+                                transform: 'scale(1.03)',
+                            },
                         }}
                     >
                         Choose Plan

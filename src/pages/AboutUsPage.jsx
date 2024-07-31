@@ -5,6 +5,7 @@ const AboutUsPage = () => {
   return (
     <>
         <Header />
+        
     </>
   )
 }
