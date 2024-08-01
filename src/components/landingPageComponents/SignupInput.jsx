@@ -1,35 +1,64 @@
 import "./signupInput.css";
 import { IoEye } from "react-icons/io5";
 import { IoMdEyeOff } from "react-icons/io";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState ,useContext} from "react";
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import { Context } from "../../ContextProvider";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function SignupInput() {
   const [isPasswordVisible, setPasswordVisibility] = useState(false);
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [repassword, setRepassword] = useState("");
-
-  const emailInput = useRef();
-  const passwordInput = useRef();
-  const repasswordInput = useRef();
+  const [isLoading,setIsLoading] = useState(false);
+  const {isAuthenticated,setIsAuthenticated} = useContext(Context);
+  const navigate=useNavigate()
 
   function handleEmailInputChange(event) {
-    emailInput.current = event.target.value;
-    setEmail(emailInput.current);
+    setUsername(event.target.value);
   }
 
   function handlePasswordInputChange(event) {
-    passwordInput.current = event.target.value;
-    setPassword(passwordInput.current);
+    setPassword(event.target.value);
   }
 
   function handleRepasswordInputChange(event) {
-    repasswordInput.current = event.target.value;
-    setRepassword(repasswordInput.current);
+    setRepassword(event.target.value);
   }
+
+  function performSignup()
+  {
+    if(password===repassword)
+    {
+      setIsLoading(true);
+      axios.post("http://localhost:3000/api/signup",{username:username,password:password}).then((response)=>
+      {
+        if(response.data.status===true)
+        {
+          setIsAuthenticated(true);
+          localStorage.setItem("userId",response.data.userId);
+          console.log("signup success");
+          navigate("/home");
+        }
+        else{
+          console.log(response.data.message);
+        }
+        setIsLoading(false);
+      }).catch((err)=>
+      {
+        setIsLoading(false);
+      })
+    }
+    else{
+      console.log("Your password doesn't match");
+    }
+  }
+
+
   return (
     <>
     <div>
@@ -88,7 +117,7 @@ export default function SignupInput() {
                   fullWidth
                   type="email"
                   label="Email"
-                  value={email}
+                  value={username}
                   onChange={handleEmailInputChange}
                   required
                 />
@@ -161,6 +190,7 @@ export default function SignupInput() {
             <div className="button_signin" id="button_signin">
               <Button
                 variant="outlined"
+                onClick={performSignup}
               >
                 Sign up
               </Button>

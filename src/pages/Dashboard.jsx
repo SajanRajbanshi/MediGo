@@ -7,12 +7,13 @@ import RxHistory from "../components/homePageComponents/pages/RxHistory_componen
 import Products from "../components/homePageComponents/pages/Product_Component/Product";
 import SearchHospitals from "../components/homePageComponents/Components/SearchHospitals/SearchHospitals";
 import Error from "../components/homePageComponents/Components/Error";
+import AuthCheckComponent from "../components/AuthCheckComponent";
 
 const Dashboard = () => {
   const router = createBrowserRouter([
     {
       path: "/home",
-      element: <Layout />,
+      element: <AuthCheckComponent/>,
       children: [
         {
           path: "/home",
