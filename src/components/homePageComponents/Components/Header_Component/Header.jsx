@@ -8,10 +8,12 @@ import DrawerComponent from "../Drawer_Component/Drawer";
 import CloseIcon from "../../assets/CloseIcon";
 import MenuIcon from "../../assets/MenuIcon";
 import { useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [open, setOpen] = useState(false)
   const width = useSelector((state) => state.windowChange.value)
+  const navigate=useNavigate();
   return (
     <header id="header">
       <Stack direction={"row"}
@@ -36,7 +38,8 @@ const Header = () => {
               width: "30px",
               height: "30px"
             }
-          } />
+          }
+          onClick={()=>{localStorage.removeItem("userId");navigate("/auth")}} />
       </Stack>
     </header>
   );
