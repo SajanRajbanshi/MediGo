@@ -1,4 +1,3 @@
-import { createTheme, ThemeProvider } from "@mui/material";
 import MedigoLandingPage from "./pages/MedigoLandingPage";
 
 function App() {
@@ -14,9 +13,7 @@ function App() {
     },
   });
   return (
-    <ThemeProvider theme={theme}>
-      <MedigoLandingPage />
-    </ThemeProvider>
-  );
+    <MedigoLandingPage></MedigoLandingPage>
+  )
 }
 export default App;

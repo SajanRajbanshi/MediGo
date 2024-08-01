@@ -1,0 +1,31 @@
+.sear{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  #search{
+    width: 40%;
+    height: 30px;
+    position: absolute;
+    transform: translateY(-2px) translateX(2px);
+    border: 1px solid;
+    border-radius: 30px;
+    padding-left: 12px;
+    background-color: #ffffff;
+  }
+  .right{
+    gap: 10px;
+    display: flex ;
+    flex-shrink:unset;
+    justify-content: flex-start;
+  }
+
+  #data {
+    position: absolute;
+    top: calc(100% + 5px);
+    left:-100px;
+    width: 200px;
+    height: 150px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
