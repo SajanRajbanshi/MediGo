@@ -56,6 +56,10 @@ const SubscriptionBody = ({ planType, onPlanChange }) => {
                         borderRadius: '12px',
                         boxShadow: planType === 'monthly' ? '0px 0px 5px 1px rgb(50, 50, 50)' : '',
                         fontWeight: planType === 'monthly' ? 'bold' : 'normal',
+                        ':hover': {
+                            transform: 'none',
+                            transition: 'none',
+                        },
                     }}
                     onClick={() => onPlanChange('monthly')}
                 >
@@ -70,7 +74,10 @@ const SubscriptionBody = ({ planType, onPlanChange }) => {
                         borderRadius: '12px',
                         boxShadow: planType === 'yearly' ? '0px 0px 5px 1px rgb(50, 50, 50)' : '',
                         fontWeight: planType === 'yearly' ? 'bold' : 'normal',
-
+                        ':hover': {
+                            transform: 'none',
+                            transition: 'none',
+                        },
                     }}
                     onClick={() => onPlanChange('yearly')}
                 >
