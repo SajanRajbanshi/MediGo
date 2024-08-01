@@ -1,0 +1,10 @@
+#main{
+    transition: filter 0.7s ease-in-out;
+    filter: blur(0px);
+  }
+  
+  #popular_Hospitals_Title,#Recent_Search{
+    font-size: 20px;
+    text-align: start;
+    padding: 12px;
+  }

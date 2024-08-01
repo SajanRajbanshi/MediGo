@@ -1,0 +1,14 @@
+.popular_hospital:hover > :not(:hover){
+    transform:  scale(.985);
+  }
+
+  .popular_hospital{
+    margin: auto;
+    width: 98vw;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 10px;
+    justify-content: space-around;
+    backdrop-filter: blur(20px);
+  }

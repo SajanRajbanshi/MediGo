@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "../App.css";
-import Auth from "../components/landingPageComponents/Auth";
-import LandingPage from "../components/landingPageComponents/LandingPage";
+// import '../App.css'
+import Auth from '../components/landingPageComponents/Auth';
+import LandingPage from '../components/landingPageComponents/LandingPage';
 import SignupInput from "../components/landingPageComponents/SignupInput";
 import SigninInput from "../components/landingPageComponents/SigninInput";
 import SubscriptionPage from "./SubscriptionPage";

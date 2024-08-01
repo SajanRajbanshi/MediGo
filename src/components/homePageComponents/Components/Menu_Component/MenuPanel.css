@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+.MuiStack-root ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  gap: 0.5em;
+  position: relative;
+  width: 100%;
+}
+
+.ant-drawer-body ul{
+  list-style-type: none;
+  width: 125px;
+}
+
+.ant-menu-item{
+  width: "140px";
+  text-align: center;
+  transition: background 0.7s ease-in-out;
+  border-radius: 12px;
+  padding: auto;
+}
+
+.ant-menu-item:hover{
+  color: white;
+  cursor: pointer;
+  background: linear-gradient(45deg, #bcdbef, #acdf01);
+  transition: 0.1s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+.ant-menu-root{
+  background: none;
+}
