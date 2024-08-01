@@ -27,13 +27,17 @@ export default function Auth(props) {
               <span className="tab dim" id="tab">
                 Contact
               </span>
-              <span className="tab dim" id="tab">
-                About
-              </span>
-              <div className="pricing" id="pricing">
-                <span className="tab gradient" id="tab">
-                  Pricing
+              <Link to="/about">
+                <span className="tab dim" id="tab">
+                  About
                 </span>
+              </Link>
+              <div className="pricing" id="pricing">
+                <Link to="/subscription">
+                  <span className="tab gradient" id="tab">
+                    Pricing
+                  </span>
+                </Link>
               </div>
             </div>
           </div>

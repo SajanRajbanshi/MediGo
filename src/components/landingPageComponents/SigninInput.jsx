@@ -1,29 +1,50 @@
 import "./signinInput.css";
 import { IoCaretDownCircleSharp, IoEye } from "react-icons/io5";
 import { IoMdEyeOff } from "react-icons/io";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
-
+import {Context} from "../../ContextProvider";
+import axios from "axios";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
-export default function SigninInput(props) {
+export default function SigninInput() {
   const [isPasswordVisible, setPasswordVisibility] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading,setIsLoading] = useState(false);
 
-  const usernameInput = useRef(null);
-  const passwordInput = useRef(null);
-
+  const {isAuthenticated,setIsAuthenticated} = useContext(Context);
 
   function handleUsernameChange(event) {
-    usernameInput.current.value = event.target.value;
-    setUsername(usernameInput.current.value);
+    setUsername(event.target.value);
   }
 
   function handlePasswordChange(event) {
-    passwordInput.current.value = event.target.value;
-    setPassword(passwordInput.current.value);
+    setPassword(event.target.value);
+  }
+
+  function performSignin()
+  {
+    setIsLoading(true);
+    axios.post("http://localhost:3000/api/signin",{username:username,password:password}).then((response)=>
+    {
+      if(response.data.status===true)
+      {
+        setIsAuthenticated(true);
+        localStorage.setItem("userId",response.data.userId);
+        console.log("signin success");
+        //redirect
+      }
+      else{
+        console.log(response.data.message);
+      }
+      setIsLoading(false);
+    }).catch((err)=>
+    {
+      console.log("error occured while performing signin");
+      setIsLoading(false);
+    })
   }
 
 
@@ -81,7 +102,6 @@ export default function SigninInput(props) {
                   variant="outlined"
                   type="text"
                   value={username}
-                  ref={usernameInput}
                   onChange={handleUsernameChange}
                   label="Username"
                   fullWidth
@@ -99,7 +119,6 @@ export default function SigninInput(props) {
                   variant="outlined"
                   label="Password"
                   type={isPasswordVisible ? "text" : "password"}
-                  ref={passwordInput}
                   onChange={handlePasswordChange}
                 />
                 <button
@@ -126,6 +145,7 @@ export default function SigninInput(props) {
             <div className="button_signin" id="button_signin">
               <Button
                 variant="outlined"
+                onClick={performSignin}
               >
                 Sign in
               </Button>
@@ -139,6 +159,8 @@ export default function SigninInput(props) {
         </div>
       </section>
     </div>
+
+
     <div className="moreoptions" id="moreoptions">
       <div
         style={{
