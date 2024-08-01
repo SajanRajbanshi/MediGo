@@ -1,8 +1,18 @@
 import React from 'react';
+import {
+  Box,
+  Container,
+  Typography
+} from '@mui/material';
+import AboutUsComponent from './AboutUsComponent';
+import TeamComponent from './TeamComponent';
 
 const AboutUsBody = () => {
   return (
-    <div style={{marginTop: '110px'}}>AboutUsBody</div>
+    <Container sx={{ marginTop: '85px' }}>
+      <AboutUsComponent />
+      <TeamComponent />
+    </Container>
   )
 }
 
