@@ -2,10 +2,8 @@ import React from 'react';
 import {
     Button,
     Container,
-    createTheme,
     Paper,
-    ThemeProvider,
-    Typography
+    Typography,
 } from '@mui/material';
 import Plans from './Plans';
 
@@ -17,7 +15,7 @@ const SubscriptionBody = ({ planType, onPlanChange }) => {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                marginTop: '110px'
+                marginTop: '104px'
             }}
         >
             <Typography

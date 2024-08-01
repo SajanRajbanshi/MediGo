@@ -4,3 +4,7 @@ body{
   font-family: "K2D";
   margin: 0;
 }
+
+a {
+  color: rgb(170, 170, 170);
+}

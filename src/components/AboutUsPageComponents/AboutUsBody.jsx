@@ -1,8 +1,11 @@
 import React from 'react';
+import { Box } from '@mui/material';
 
 const AboutUsBody = () => {
   return (
-    <div style={{marginTop: '110px'}}>AboutUsBody</div>
+    <Box sx={{marginTop: '104px'}}>
+      Hey
+    </Box>
   )
 }
 
