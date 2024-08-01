@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutUsBody = () => {
   return (
-    <div>AboutUsBody</div>
+    <div style={{marginTop: '110px'}}>AboutUsBody</div>
   )
 }
 
