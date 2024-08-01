@@ -50,7 +50,7 @@ export default function Header() {
                     id="right">
                     <div id="headerAuthDiv">
                         <Link
-                            to="/Signin">
+                            to="/auth">
                             <button
                                 className="signin"
                                 id="signin">
@@ -60,7 +60,7 @@ export default function Header() {
                     </div>
                     <div>
                         <Link
-                            to="/Signup">
+                            to="/auth/signup">
                             <button
                                 className="signup"
                                 id="signup">

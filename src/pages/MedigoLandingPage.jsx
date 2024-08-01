@@ -1,51 +1,20 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import '../App.css'
-import Signupin from '../components/landingPageComponents/Signupin';
+import Auth from '../components/landingPageComponents/Auth';
 import LandingPage from '../components/landingPageComponents/LandingPage';
+import SignupInput from "../components/landingPageComponents/SignupInput";
+import SigninInput from "../components/landingPageComponents/SigninInput";
 
 
 export default function MedigoLandingPage()
 {
-    return (
-        <Router>
-          <Routes>
-            <Route
-              exact path='/'
-              element={<LandingPage />}>
-            </Route>
-            <Route
-              exact path='/Signin'
-              element={
-                <Signupin
-                  initial={
-                    {
-                      state: 1,
-                      switch: {
-                        message: "Don't have an account?",
-                        action: "Sign up"
-                      }
-                    }
-                  } />
-              }>
-            </Route>
-            <Route
-              exact path='/Signup'
-              element={
-                <Signupin
-                  initial={
-                    {
-                      state: 0,
-                      switch: {
-                        message: "Already have an account?",
-                        action: "Sign in"
-                      }
-                    }
-                  } />
-              }>
-            </Route>
-            <Route exact path="*" element={<LandingPage/>} >
-              </Route>
-          </Routes>
-        </Router>
-      )
+  const router=createBrowserRouter([
+    {path:"/",element:<LandingPage></LandingPage> },
+    {path:"/auth", element:<Auth></Auth>,children:[
+      {path:"/auth/signup",element:<SignupInput></SignupInput>},
+      {path:"/auth/",element:<SigninInput></SigninInput>}
+    ]}
+  ])
+  return <RouterProvider router={router} />;
 }

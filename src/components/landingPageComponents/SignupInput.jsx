@@ -2,17 +2,11 @@ import "./signupInput.css";
 import { IoEye } from "react-icons/io5";
 import { IoMdEyeOff } from "react-icons/io";
 import { useEffect, useRef, useState } from "react";
-import interfaceDateFromDb from "./Database.json";
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function SignupInput() {
-  const [interfaceDate, setInterfaceData] = useState({
-    signupButtonTapCount: 0,
-    signupEmailInputBoxTapCount: 0,
-    signupPasswordInputBoxTapCount: 0,
-    signupRepasswordInputBoxTapCount: 0,
-  });
   const [isPasswordVisible, setPasswordVisibility] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -36,21 +30,8 @@ export default function SignupInput() {
     repasswordInput.current = event.target.value;
     setRepassword(repasswordInput.current);
   }
-
-  useEffect(() => {
-    return () => {
-      console.log(
-        interfaceDateFromDb.signinButton + interfaceDate.signupButtonTapCount,
-        interfaceDateFromDb.signinEmailInputBox +
-          interfaceDate.signupEmailInputBoxTapCount,
-        interfaceDateFromDb.signinPasswordInputBox +
-          interfaceDate.signupPasswordInputBoxTapCount,
-        interfaceDateFromDb.signupRepasswordInputBox +
-          interfaceDate.signupRepasswordInputBoxTapCount
-      );
-    };
-  }, []);
   return (
+    <>
     <div>
       <div className="page1Signup" id="page1Signup">
         <div
@@ -103,16 +84,6 @@ export default function SignupInput() {
             <div className="placeholder" id="placeholder"></div>
             <div className="inputbox" id="inputbox1">
               <div className="inputBoxWrapper">
-                {/* <input
-                  type="text"
-                  className="ipbox"
-                  name="email"
-                  id="email"
-                  onClick={() => {
-                    interfaceDate.signupEmailInputBoxTapCount++;
-                    setInterfaceData(interfaceDate);
-                  }}
-                /> */}
                 <TextField
                   fullWidth
                   type="email"
@@ -120,35 +91,17 @@ export default function SignupInput() {
                   value={email}
                   onChange={handleEmailInputChange}
                   required
-                  onClick={() => {
-                    interfaceDate.signupEmailInputBoxTapCount++;
-                    setInterfaceData(interfaceDate);
-                  }}
                 />
               </div>
             </div>
             <div className="placeholder" id="placeholder"></div>
             <div className="inputbox" id="inputbox2">
               <div className="inputBoxWrapper">
-                {/* <input
-                  type={isPasswordVisible ? "text" : "password"}
-                  className="ipbox"
-                  name="password"
-                  id="password"
-                  onClick={() => {
-                    interfaceDate.signupPasswordInputBoxTapCount++;
-                    setInterfaceData(interfaceDate);
-                  }}
-                /> */}
                 <TextField
                   type={isPasswordVisible ? "text" : "password"}
                   label="Password"
                   value={password}
                   onChange={handlePasswordInputChange}
-                  onClick={() => {
-                    interfaceDate.signupPasswordInputBoxTapCount++;
-                    setInterfaceData(interfaceDate);
-                  }}
                   fullWidth
                   required
                 />
@@ -176,16 +129,6 @@ export default function SignupInput() {
             <div className="placeholder" id="placeholder"></div>
             <div className="inputbox" id="inputbox3">
               <div className="inputBoxWrapper">
-                {/* <input
-                  type={isPasswordVisible ? "text" : "password"}
-                  className="ipbox"
-                  name="re_password"
-                  id="re_password"
-                  onClick={() => {
-                    interfaceDate.signupRepasswordInputBoxTapCount++;
-                    setInterfaceData(interfaceDate);
-                  }}
-                /> */}
                 <TextField
                   fullWidth
                   value={repassword}
@@ -193,10 +136,6 @@ export default function SignupInput() {
                   label="Re-Password"
                   type={isPasswordVisible ? "text" : "password"}
                   required
-                  onClick={() => {
-                    interfaceDate.signupRepasswordInputBoxTapCount++;
-                    setInterfaceData(interfaceDate);
-                  }}
                 />
                 <button
                   onClick={() => {
@@ -220,23 +159,7 @@ export default function SignupInput() {
               </div>
             </div>
             <div className="button_signin" id="button_signin">
-              {/* <div className="button_wrapper" id="button_wrapper">
-                <button
-                  className="signupInput"
-                  id="signin"
-                  onClick={() => {
-                    interfaceDate.signupButtonTapCount++;
-                    setInterfaceData(interfaceDate);
-                  }}
-                >
-                  Sign up
-                </button>
-              </div> */}
               <Button
-                onClick={() => {
-                  interfaceDate.signupButtonTapCount++;
-                  setInterfaceData(interfaceDate);
-                }}
                 variant="outlined"
               >
                 Sign up
@@ -250,7 +173,52 @@ export default function SignupInput() {
           <div className="smallcircle2" id="smallcircle2"></div>
         </div>
       </div>
-      {console.log("signup rendred")}
     </div>
+    <div className="moreoptions" id="moreoptions">
+      <div
+        style={{
+          width: "50%",
+          minWidth: "400px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <button
+          className="google"
+          id="google"
+        >
+          Continue with Google
+        </button>
+      </div>
+      <div
+        style={{
+          width: "50%",
+          minWidth: "400px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <span>Already have an Account?</span>
+          <Link to="/auth">
+          <button
+            className="signupAuth"
+            id="signupAuth"
+          >
+            Sign in
+          </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+    </>
   );
 }
