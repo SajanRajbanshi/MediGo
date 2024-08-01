@@ -2,9 +2,9 @@ import "./signupInput.css";
 import { IoEye } from "react-icons/io5";
 import { IoMdEyeOff } from "react-icons/io";
 import { useEffect, useRef, useState } from "react";
-import interfaceDateFromDb from "./Database.json";
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function SignupInput() {
   const [isPasswordVisible, setPasswordVisibility] = useState(false);
@@ -31,6 +31,7 @@ export default function SignupInput() {
     setRepassword(repasswordInput.current);
   }
   return (
+    <>
     <div>
       <div className="page1Signup" id="page1Signup">
         <div
@@ -172,7 +173,52 @@ export default function SignupInput() {
           <div className="smallcircle2" id="smallcircle2"></div>
         </div>
       </div>
-      {console.log("signup rendred")}
     </div>
+    <div className="moreoptions" id="moreoptions">
+      <div
+        style={{
+          width: "50%",
+          minWidth: "400px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <button
+          className="google"
+          id="google"
+        >
+          Continue with Google
+        </button>
+      </div>
+      <div
+        style={{
+          width: "50%",
+          minWidth: "400px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <span>Already have an Account?</span>
+          <Link to="/auth">
+          <button
+            className="signupAuth"
+            id="signupAuth"
+          >
+            Sign in
+          </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+    </>
   );
 }

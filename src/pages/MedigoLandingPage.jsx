@@ -4,6 +4,8 @@ import Auth from "../components/landingPageComponents/Auth";
 import LandingPage from "../components/landingPageComponents/LandingPage";
 import SignupInput from "../components/landingPageComponents/SignupInput";
 import SigninInput from "../components/landingPageComponents/SigninInput";
+import SubscriptionPage from "./SubscriptionPage";
+import AboutUsPage from "./AboutUsPage";
 
 export default function MedigoLandingPage() {
   const router = createBrowserRouter([
@@ -20,7 +22,12 @@ export default function MedigoLandingPage() {
       ],
     },
     {
-      path: "",
+      path: "/subscription",
+      element: <SubscriptionPage />,
+    },
+    {
+      path: "/about",
+      element: <AboutUsPage />,
     },
   ]);
   return <RouterProvider router={router} />;
