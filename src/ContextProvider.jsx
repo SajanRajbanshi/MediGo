@@ -11,4 +11,4 @@ function ContextProvider({ children }) {
     </Context.Provider>
   );
 }
-export {Context,ContextProvider};
+export { Context, ContextProvider };

@@ -7,6 +7,7 @@ import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Context } from "../../ContextProvider";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function SignupInput() {
   const [isPasswordVisible, setPasswordVisibility] = useState(false);
@@ -15,6 +16,7 @@ export default function SignupInput() {
   const [repassword, setRepassword] = useState("");
   const [isLoading,setIsLoading] = useState(false);
   const {isAuthenticated,setIsAuthenticated} = useContext(Context);
+  const navigate=useNavigate()
 
   function handleEmailInputChange(event) {
     setUsername(event.target.value);
@@ -40,7 +42,7 @@ export default function SignupInput() {
           setIsAuthenticated(true);
           localStorage.setItem("userId",response.data.userId);
           console.log("signup success");
-          //redirect
+          navigate("/home");
         }
         else{
           console.log(response.data.message);

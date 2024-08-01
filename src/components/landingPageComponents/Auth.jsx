@@ -7,7 +7,6 @@ import SignupInput from "./SignupInput";
 import { Outlet } from "react-router-dom"
 
 
-import Badge from "@mui/material/Badge";
 
 export default function Auth(props) {
 

@@ -7,12 +7,14 @@ import {Context} from "../../ContextProvider";
 import axios from "axios";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function SigninInput() {
   const [isPasswordVisible, setPasswordVisibility] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading,setIsLoading] = useState(false);
+  const navigate=useNavigate();
 
   const {isAuthenticated,setIsAuthenticated} = useContext(Context);
 
@@ -34,7 +36,7 @@ export default function SigninInput() {
         setIsAuthenticated(true);
         localStorage.setItem("userId",response.data.userId);
         console.log("signin success");
-        //redirect
+        navigate("/home");
       }
       else{
         console.log(response.data.message);
