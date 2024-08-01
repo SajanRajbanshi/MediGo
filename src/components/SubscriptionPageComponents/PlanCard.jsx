@@ -15,13 +15,15 @@ import { blue } from '@mui/material/colors';
 const PlanCard = ({ planType, planDetails }) => {
     return (
         <Grid item xs={6} sm={4} md={4}>
-            <Paper elevation={3} sx={{ borderRadius: '15px' }}>
+            <Paper elevation={5} sx={{ borderRadius: '15px' }}>
                 <Box>
                     <Typography
                         sx={{ fontWeight: 'bold' }}
                         variant='h4'
                         fontSize={40}
-                        p={2}
+                        pl={15}
+                        pt={13}
+                        pb={13}
                     >
                         ${
                             planType === ("monthly" || 0)
@@ -30,7 +32,8 @@ const PlanCard = ({ planType, planDetails }) => {
                         }
                     </Typography>
                     <Typography
-                        pl={2}
+                        pl={20}
+                        mb={4}
                         variant='subtitle1'
                         sx={{ fontWeight: 'bold', color: '#4d4d4d' }}
                         fontSize={20}
@@ -38,9 +41,10 @@ const PlanCard = ({ planType, planDetails }) => {
                         {planDetails.name}
                     </Typography>
                     <Typography
-                        pl={2}
+                        pl={20}
                         variant='subtitle2'
                         fontSize={16}
+                        mb={18}
                     >
                         {planDetails.text}
                     </Typography>
@@ -92,7 +96,7 @@ const PlanCard = ({ planType, planDetails }) => {
                     <Button
                         sx={{
                             width: '90%',
-                            margin: '0.5rem 5%',
+                            margin: '1.3rem 5%',
                             background: blue[500],
                             color: 'white',
                             borderRadius: '19px',

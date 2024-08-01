@@ -15,7 +15,7 @@ const SubscriptionBody = ({ planType, onPlanChange }) => {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                marginTop: '104px'
+                marginTop: '118px'
             }}
         >
             <Typography
@@ -43,7 +43,7 @@ const SubscriptionBody = ({ planType, onPlanChange }) => {
                     borderRadius: '12px',
                     display: 'flex',
                     height: '8vh',
-                    marginTop: '8px',
+                    marginTop: '10px',
                     width: '32vw',
                 }}
             >

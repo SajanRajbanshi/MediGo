@@ -57,8 +57,8 @@ const Plans = ({ planType }) => {
     ];
 
     return (
-        <Box mt={5} width='inherit'>
-            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+        <Box mt={20} width='inherit'>
+            <Grid container spacing={{ xs: 4, md: 20 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                 {
                     plans.map((planDetails) => (
                         <PlanCard key={planDetails.name} planType={planType} planDetails={planDetails} />
