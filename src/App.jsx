@@ -21,7 +21,6 @@ import SearchHospitals from "./components/homePageComponents/Components/SearchHo
 import Error from "./components/homePageComponents/Components/Error";
 
 function App() {
-  console.log("hey")
   const router = createBrowserRouter([
     {
       path: "/",
