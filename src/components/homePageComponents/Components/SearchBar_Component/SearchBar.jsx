@@ -22,7 +22,7 @@ const SearchBar = () => {
   const dispatch = useDispatch()
   let searchTerm = "";
   const imageList = [
-    img1,img2,img3,img4,img5,img6,img7,img8,img9,img10
+    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10
   ];
   const navigate = useNavigate();
 
@@ -63,12 +63,12 @@ const SearchBar = () => {
   };
 
   return (
-    <Stack id="rightSideDivForProfileAndSearch" className="right">
-      <Stack className="sear" id="sear" title="Search Hospitals" direction={"row"}>
+    <Stack id="rightSideDivForProfileAndSearch" className="homepage_searchbar_right">
+      <Stack className="homepage_searchbar_sear" id="sear" title="Search Hospitals" direction={"row"}>
         <label
           htmlFor="search"
           id="label_of_search"
-          className="label_of_search"
+          className="homepage_searchbar_label_of_search"
           onClick={handleSearchInputOpeningAndClosing}
         >
           <IoSearchSharp style={{ width: "20px", height: "20px" }} />
@@ -76,15 +76,17 @@ const SearchBar = () => {
         {isOpened && (
           <input
             type="search"
-            className="search"
-            list="data"
+            className="homepage_searchbar_search"
+            list="homepage_searchbar_data"
             id="search"
             placeholder="Search Hospitals..."
             onBlur={handleBlurEvent}
             onKeyDown={makeRequestForRecentCardAdd}
           />
         )}
-        <datalist id="data">
+        <datalist id="homepage_searchbar_data"
+        className="homepage_searchbar_data"
+        >
           {dataFetch.map((value, index) => (
             <option key={index} value={value.NAME}>
               {value.NAME}

@@ -10,22 +10,22 @@ const HospitalItem = ({
   <Stack
     direction={"row"}
     id={id + "hospitalItem"}
-    className="homeRightSideBar-hospitalItem">
+    className="homepage_homeRight_homeRightSideBar-hospitalItem">
     <Typography
       variant="body-1"
       id={id + "span"}
-      className="HospitalName"
+      className="homepage_homeRight_HospitalName"
       >
       {name}
     </Typography>
     <Typography
       variant="bdy-1"
       id={id + "-rating"}
-      className="homeRightSideBar-rating">
+      className="homepage_homeRight_homeRightSideBar-rating">
       <Typography
         variant="body-1"
         id="star-span"
-        className="star_span">
+        className="homepage_homeRight_star_span">
         <FaStar style={
           { color: "rgba(255,225,25,1)" }
         } />
@@ -42,7 +42,7 @@ const Section = ({
     <Typography
       variant="h6"
       id={title + "-section-title"}
-      className="homeRightSideBar-section-title"
+      className="homepage_homeRight_homeRightSideBar-section-title"
     >
       {title}
       <FaHospital />
@@ -50,7 +50,7 @@ const Section = ({
     <Stack
       key={title}
       id={title + "-section"}
-      className="homeRightSideBar-section">
+      className="homepage_homeRight_homeRightSideBar-section">
       {hospitals.map((h) => (
         <HospitalItem
           key={h.id}
@@ -59,7 +59,7 @@ const Section = ({
       ))}
       <button
         id={title + "-section-button"}
-        className="homeRightSideBar-section-button"
+        className="homepage_homeRight_homeRightSideBar-section-button homepage_homeRight_hover"
       >
         See more
       </button>
@@ -107,10 +107,10 @@ const HomeRightSideComponent = () => {
   return (
     <Stack
       id="home-rightside-container-div"
-      className="homeRightSideBar-container">
+      className="homepage_homeRight_homeRightSideBar-container">
       <button
         id="emergency_button"
-        className="homeRightSideBar-emergencyButton"
+        className="homepage_homeRight_homeRightSideBar-emergencyButton homepage_homeRight_hover"
       >
         Emergency
       </button>

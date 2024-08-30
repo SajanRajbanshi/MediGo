@@ -58,7 +58,7 @@ const Card = ({ Hospital_Detail, ImagePath, requested, onDelete, date, time }) =
   };
 
   const createClassNameByHospitalName = () => {
-    return `card ${ModifyHospitalName().split(" ").join("_")}`;
+    return `homePage_card ${ModifyHospitalName().split(" ").join("_")}`;
   };
 
   const createFullAddressFromDetail = () => {
@@ -127,7 +127,7 @@ const Card = ({ Hospital_Detail, ImagePath, requested, onDelete, date, time }) =
     display: "flex",
     flexDirection: "column",
     height: "100%",
-    "& .option-block": {
+    "& .homePage_option-block": {
       position: "absolute",
       top: "5px",
       right: "5px",
@@ -136,16 +136,7 @@ const Card = ({ Hospital_Detail, ImagePath, requested, onDelete, date, time }) =
       boxShadow: theme.shadows[5],
       borderRadius: theme.shape.borderRadius,
       padding: theme.spacing(1),
-    },
-    "& .dateAndTimeBlock": {
-      position: "absolute",
-      bottom: theme.spacing(1),
-      fontFamily: theme.typography.fontFamily,
-      left: theme.spacing(1),
-      background: theme.palette.background.paper,
-      padding: theme.spacing(0.5),
-      borderRadius: theme.shape.borderRadius,
-    },
+    }
   }));
 
   return (
@@ -219,7 +210,7 @@ const Card = ({ Hospital_Detail, ImagePath, requested, onDelete, date, time }) =
       <></>
       {isRightClicked && onDelete && (
         <Box
-          className="option-block"
+          className="homePage_option-block"
           style={{
             left: `${X}px`,
             top: `${Y}px`,

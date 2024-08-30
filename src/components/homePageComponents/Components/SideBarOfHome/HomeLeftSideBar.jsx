@@ -30,34 +30,34 @@ const Dashboard = () => {
   return (
     <Stack
       id="dashboard-div"
-      className="dashboard">
+      className="homepage_homeLeft_dashboard">
       <Stack
         direction={"row"}
         id="dashboard-header-div"
-        className="DashBoardheader">
+        className="homepage_homeLeft_DashBoardheader">
         <img
           id="user-profile-picture"
           src="https://images.unsplash.com/photo-1539667468225-eebb663053e6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG5hdHVyYWx8ZW58MHx8MHx8fDA%3D"
           alt="Profile"
-          className="profile-picture"
+          className="homepage_homeLeft_profile-picture"
         />
         <Typography
           variant="body-2"
           id="username"
-          className="username"
+          className="homepage_homeLeft_username"
         >
           John Doe
         </Typography>
       </Stack>
       <Stack
         id="leftHomeMenu"
-        className="leftHomeMenu">
+        className="homepage_homeLeft_leftHomeMenu">
         {options.map((items) => (
           <Stack
             direction={"row"}
             id={"OptionDivOf" + items.id}
             key={items.id}
-            className="leftHomeMenu-item">
+            className="homepage_homeLeft_leftHomeMenu-item">
             {items.Title}
             <Typography
               variant="body-2"
@@ -71,7 +71,7 @@ const Dashboard = () => {
       </Stack>
       <button
         id="get-medicine-button"
-        className="get-medicine-button"
+        className="homepage_homeLeft_get-medicine-button"
       >
         Get Medicine
       </button>

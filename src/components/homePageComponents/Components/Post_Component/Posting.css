@@ -1,4 +1,4 @@
-.container {
+.homepage_posting_container {
     display: flex;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.47);
     padding: 15px;
@@ -9,17 +9,17 @@
     background-color: #f1f1f1;
   }
 
-  .profileContainer{
+  .homepage_posting_profileContainer{
     margin-right: 10px;
   }
 
-  .profileImage{
+  .homepage_posting_profileImage{
     width: 40px;
     height: 40px;
     border-radius: 50%;
   }
 
-  .messageContainer{
+  .homepage_posting_messageContainer{
     background-color: #fff;
     border-radius: 25px;
     height: 40px;
@@ -29,7 +29,7 @@
     align-items: center;
   }
 
-  .messageText{
+  .homepage_posting_messageText{
     margin: 0;
     font-size: '16px';
     border-radius: 25px;
@@ -42,10 +42,10 @@
     white-space: pre-wrap;
   }
 
-  .messageText::-webkit-scrollbar{
+  .homepage_posting_messageText::-webkit-scrollbar{
     display: none;
   }
-  .post-button {
+  .homepage_posting_post-button {
     background-color: #afafaf;
     color: #000;
     font-size: large;
@@ -56,6 +56,6 @@
     text-align: center;
     cursor: pointer;
   }
-  .post-button:hover {
+  .homepage_posting_post-button:hover {
     background-color: #8f8f8f;
   }

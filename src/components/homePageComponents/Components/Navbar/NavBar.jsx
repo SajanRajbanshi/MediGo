@@ -27,7 +27,7 @@ function NavBar() {
   const isSmallWindow = width <= 975;
 
   return (
-    <nav className='navBar' id='navBar'>
+    <nav className='homepage_navBar' id='navBar'>
       {isSmallWindow ? (
         <DrawerComponent open={isOpen} onClose={() => setIsOpen(false)} />
       ) : (

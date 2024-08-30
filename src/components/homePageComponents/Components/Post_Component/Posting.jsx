@@ -14,18 +14,17 @@ const MessageComponent = () => {
   }
   return (
     <Stack
-      className="container"
+      className="homepage_posting_container"
       id="postingContainer"
       direction={"row"}
     >
       <Stack
-        className="profileContainer"
+        className="homepage_posting_profileContainer"
         id="profileContainer">
         <img
-          //   src="src/assets/img/1.jpg"
           src="https://images.unsplash.com/photo-1539667468225-eebb663053e6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG5hdHVyYWx8ZW58MHx8MHx8fDA%3D"
           alt="User Profile"
-          className="profileImage"
+          className="homepage_posting_profileImage"
         />
       </Stack>
       <label
@@ -33,9 +32,9 @@ const MessageComponent = () => {
         htmlFor="Post_Question"></label>
       <Stack
         id="messageContainer"
-        className="messageContainer">
+        className="homepage_posting_messageContainer">
         <input
-          className="messageText"
+          className="homepage_posting_messageText"
           type="text-area"
           ref={queInput}
           placeholder="How do you feel today?"
@@ -49,7 +48,7 @@ const MessageComponent = () => {
         <button
           id="postButton"
           onClick={handlePosting}
-          className="post-button">POST</button>
+          className="homepage_posting_post-button">POST</button>
       </Stack>
     </Stack>
   );

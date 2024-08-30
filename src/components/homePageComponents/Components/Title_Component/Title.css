@@ -1,14 +1,14 @@
-.title{
+.homepage_web_title{
     width: max-content;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
   }
   
-  .c1{
+  .homepage_web_c1{
     color:black;
   }
   
-  .c2{
+  .homepage_web_c2{
     color:#C42121;
   }
