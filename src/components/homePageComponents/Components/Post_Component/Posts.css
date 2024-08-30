@@ -1,18 +1,18 @@
-.user-profile {
+.homepage_posts_user-profile {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
-.user-image {
+.homepage_posts_user-image {
   border-radius: 50%;
   width: 40px;
   height: 40px;
   margin-right: 10px;
 }
-.user-name {
+.homepage_posts_user-name {
   font-weight: bold;
 }
-.post {
+.homepage_posts_post {
   overflow: hidden;
   border: 1px solid #e1e4e8;
   padding: 15px;
@@ -23,7 +23,7 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.47);
   transition: all 0.5s ease-in-out;
 }
-.post-question {
+.homepage_posts_post-question {
   cursor: context-menu;
   font-size: 20px;
   margin: 10px 0;
@@ -31,14 +31,14 @@
   font-weight: bolder;
   color: rgba(0, 0, 0, 0.77);
 }
-.post-content {
+.homepage_posts_post-content {
   margin-bottom: 60px;
   font-weight: bold;
   text-align: justify;
   cursor: context-menu;
   color: rgba(0, 0, 0, 0.47);
 }
-.post-footer {
+.homepage_posts_post-footer {
   position: absolute;
   width: 100%;
   left: 0px;
@@ -64,19 +64,19 @@
   justify-content: space-between;
   align-items: center;
 }
-.post-votes {
+.homepage_posts_post-votes {
   display: flex;
   align-items: center;
   gap: 3px;
 }
-.post-votes span {
+.homepage_posts_post-votes span {
   display:flex;
   justify-content: center;
   width: 30px;
   margin: 0 5px;
 }
-.answer-button,
-.show_more_button {
+.homepage_posts_answer-button,
+.homepage_posts_show_more_button {
   background-color: #afafaf;
   color: #000;
   font-size: large;
@@ -88,7 +88,7 @@
   transition: all 0.3s ease-in;
   cursor: pointer;
 }
-.show_more_button {
+.homepage_posts_show_more_button {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -97,13 +97,13 @@
   background: none;
   color: rgba(0, 0, 0, 0.67);
 }
-.show_more_button:hover {
+.homepage_posts_show_more_button:hover {
   transform: scale(1.05);
 }
-.answer-button:hover {
+.homepage_posts_answer-button:hover {
   background-color: #8f8f8f;
 }
-.post-header-div {
+.homepage_posts_post-header-div {
   -webkit-user-select: none;
   user-select: none;
   display: flex;
@@ -125,7 +125,7 @@
   margin-bottom: -20px;
 }
 
-.Submit,.notification-close-button{
+.homepage_posts_Submit,.homepage_posts_notification-close-button{
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -143,14 +143,14 @@
 
 
 
-.notification-close-button{
+.homepage_posts_notification-close-button{
   position: absolute;
   top: 3%;
   right: 3%;
   background: none;
 }
 
-.Answer{
+.homepage_posts_Answer{
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -158,14 +158,14 @@
   justify-content: center ;
 }
 
-.Submit:is(:hover):not(:disabled),.notification-close-button:hover{
+.homepage_posts_Submit:is(:hover):not(:disabled),.homepage_posts_notification-close-button:hover{
   background: linear-gradient(45deg, #bcdbef, #acdf01,#46e26a);
   transform: scale(1.05);
   color: white;
 }
 
 
-.textArea{
+.homepage_posts_textArea{
   border-radius: 15px;
   scrollbar-width: none;
   resize: none;
@@ -176,7 +176,7 @@
   text-align: justify;
 }
 
-.notification-popup{
+.homepage_posts_notification-popup{
   position: fixed;
   top: 50%;
   left: 50%;

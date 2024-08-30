@@ -1,72 +1,73 @@
-.dashboard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0.5vw;
-    margin-top:2vw;
-    width: 23vw;
-    font-family: Arial, sans-serif;
-    /* position: absolute;
-    top: 80px;
-    left: 20px; */
-  }
-  
-  .DashBoardheader {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .profile-picture {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
-  
-  .username {
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .leftHomeMenu {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .leftHomeMenu-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    color: rgba(0, 0, 0, 0.57);
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 24px;
-  }
+.homepage_homeLeft_dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5vw;
+  margin-top: 2vw;
+  width: 23vw;
+  font-family: Arial, sans-serif;
+}
 
-  .leftHomeMenu-item:hover{
-    transform: scale(1.01);
-    background-color: rgba(0, 0, 0, 0.05);
-  }
-  
-  .leftHomeMenu-item span {
-    margin-right: 10px;
-    font-size: 20px;
-  }
-  
-  .get-medicine-button {
-    background: linear-gradient(45deg,#75E71B,#26E339);
-    color: white;
-    font-size: 16px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-  }
+.homepage_homeLeft_DashBoardheader {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.homepage_homeLeft_profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.homepage_homeLeft_username {
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.homepage_homeLeft_leftHomeMenu {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.homepage_homeLeft_leftHomeMenu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  color: rgba(0, 0, 0, 0.57);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.homepage_homeLeft_leftHomeMenu-item:hover {
+  transform: scale(1.01);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.homepage_homeLeft_leftHomeMenu-item span {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.homepage_homeLeft_get-medicine-button {
+  background: linear-gradient(45deg, #75e71b, #26e339);
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.homepage_homeLeft_get-medicine-button:hover {
+  transform: scale(1.1);
+}

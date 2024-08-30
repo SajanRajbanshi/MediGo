@@ -16,19 +16,19 @@ const UserProfile = ({
   answers,
   id }) => {
   return (
-    <Stack id={id + "-post-header-div"} className="post-header-div" direction={"row"}>
-      <Stack id={"user-profile" + id} className="user-profile" direction={"row"}>
+    <Stack id={id + "-post-header-div"} className="homepage_posts_post-header-div" direction={"row"}>
+      <Stack id={"user-profile" + id} className="homepage_posts_user-profile" direction={"row"}>
         <img
           id={"imageOfPost" + id}
           src={image}
           alt={name}
-          className="user-image"
+          className="homepage_posts_user-image"
         />
-        <span id={"userNameofPost" + id} className="user-name">
+        <span id={"userNameofPost" + id} className="homepage_posts_user-name">
           {name}
         </span>
       </Stack>
-      <Stack id={"post-answerOf-post" + id} className="post-answers">
+      <Stack id={"post-answerOf-post" + id} className="homepage_posts_post-answers">
         <span>{answers} answers</span>
       </Stack>
     </Stack>
@@ -39,13 +39,13 @@ const NotificationPopup = ({ onClose }) => {
   return (
     <Stack
       id="notification-popup-div"
-      className="notification-popup">
+      className="homepage_posts_notification-popup">
       <Typography variant="body-1" id="notification-thanks-text">
         Thank you for your answer!
       </Typography>
       <Button
         id="notification-close-button"
-        className="notification-close-button"
+        className="homepage_posts_notification-close-button"
         onClick={onClose}
       >
         <FaWindowClose />
@@ -131,7 +131,7 @@ const Post = ({
     <>
       <Stack
         id={"post" + id}
-        className="post"
+        className="homepage_posts_post"
         style={
           isReadMoreOpened ? { height: "fit-content" } : { maxHeight: "300px" }
         }
@@ -146,18 +146,18 @@ const Post = ({
           variant="h6"
           sx={{fontWeight:"bolder"}}
           id={"questionOfPost" + id}
-          className="post-question"
+          className="homepage_posts_post-question"
         >
           {"Q) " + question}
         </Typography>
         <p
           id={"contentOfPost" + id}
-          className="post-content">
+          className="homepage_posts_post-content">
           {!isAnswerBoxOpen ? content : ""}
         </p>
         <Stack
           id={"footerOfPost" + id}
-          className="post-footer"
+          className="homepage_posts_post-footer"
           direction={"row"}
           style={
             !isReadMoreOpened && !isAnswerBoxOpen
@@ -167,7 +167,7 @@ const Post = ({
         >
           <Stack
             id={"votesOfPost" + id}
-            className="post-votes"
+            className="homepage_posts_post-votes"
             direction={"row"}>
             <FaAngleUp
               style={
@@ -192,7 +192,7 @@ const Post = ({
               variant="outlined"
               sx={{backgroundColor:"#afafaf", color:"black", fontWeight:"bolder"}}
               id={"answerButtonOfPost" + id}
-              className="answer-button"
+              className="homepage_posts_answer-button"
               onClick={() => handleOpenClose(id)}
             >
               {isAnswerBoxOpen ? "Close" : "Answer"}
@@ -201,7 +201,7 @@ const Post = ({
 
           {!isAnswerBoxOpen && <button
             id={"showMorePost" + id}
-            className="show_more_button"
+            className="homepage_posts_show_more_button"
             onClick={() => handleReadMoreOpenAccordion(id)}
           >
             {isReadMoreOpened ? "Contract" : "Expand"}
@@ -228,12 +228,12 @@ const Post = ({
       {isAnswerBoxOpen && !isAnswered && (
         <Stack
           id={"Answer" + id}
-          className="Answer">
+          className="homepage_posts_Answer">
           <label htmlFor="text-area"></label>
           <textarea
             ref={answerArea}
             id={"text-area" + id}
-            className="textArea"
+            className="homepage_posts_textArea"
             autoFocus
             placeholder="Write Your Answer..."
             defaultValue={answer ? answer : ""}
@@ -248,7 +248,7 @@ const Post = ({
           />
           <button
             id={"answerPostButtonOfPost" + id}
-            className="Submit"
+            className="homepage_posts_Submit"
             onClick={handleAnswerPosting}
             {...(isAnswerPostButtonDisabled
               ? { disabled: true }

@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { Grid, Container } from "@mui/material";
 import HospitalCard from "../Card_Component/Card";
 import fetchedData from "../../assets/jsonData";
-import "./PopularHospital.css";
 
 const PopularHospital = () => {
   const [filteredData, setFilteredData] = useState([]);

@@ -1,9 +1,9 @@
-.sear{
+.homepage_searchbar_sear{
     display: flex;
     align-items: center;
     justify-content: flex-end;
   }
-  #search{
+  .homepage_searchbar_search{
     width: 40%;
     height: 30px;
     position: absolute;
@@ -13,14 +13,14 @@
     padding-left: 12px;
     background-color: #ffffff;
   }
-  .right{
+  .homepage_searchbar_right{
     gap: 10px;
     display: flex ;
     flex-shrink:unset;
     justify-content: flex-start;
   }
 
-  #data {
+  .homepage_searchbar_data {
     position: absolute;
     top: calc(100% + 5px);
     left:-100px;

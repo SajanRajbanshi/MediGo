@@ -15,7 +15,7 @@ const Header = () => {
   const width = useSelector((state) => state.windowChange.value)
   const navigate=useNavigate();
   return (
-    <header id="header">
+    <header id="homepage_header">
       <Stack direction={"row"}
         alignItems="center">
         {width <= 975 ? (<>

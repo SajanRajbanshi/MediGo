@@ -6,14 +6,17 @@ import { Typography } from "@mui/material"
 import { useSelector } from "react-redux";
 
 export default function SearchHospitals() {
-  let cardData = useSelector((state)=>state.cardData.value)
+  let cardData = useSelector((state) => state.cardData.value)
   const [recentCardDatas, setRecentCardDatas] = useState([])
 
   return (
-    <main id="main">
+    <main
+      id="homepage_searchHospital_main"
+      className="homepage_searchHospital_main"
+    >
       <Typography
         variant="h6"
-        id="popular_Hospitals_Title"
+        id="homepage_searchHospital_popular_Hospitals_Title"
         title="Popular Hospitals"
         sx={{ fontWeight: "bold" }}
       >
@@ -22,7 +25,7 @@ export default function SearchHospitals() {
       <PopularHospital />
       <Typography
         variant="h6"
-        id="Recent_Search"
+        id="homepage_searchHospital_Recent_Search"
         sx={{ fontWeight: "bold" }}
       >
         Recent Search

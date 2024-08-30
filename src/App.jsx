@@ -1,10 +1,5 @@
-// // import MedigoLandingPage from "./pages/MedigoLandingPage";
-// import MedigoLandingPage from "./pages/MedigoLandingPage"
-// import Dashboard from "./pages/Dashboard";
-
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// import Auth from '../components/landingPageComponents/Auth';
 import Auth from "./components/landingPageComponents/Auth";
 import LandingPage from './components/landingPageComponents/LandingPage';
 import SignupInput from "./components/landingPageComponents/SignupInput";

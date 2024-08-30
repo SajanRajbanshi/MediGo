@@ -1,4 +1,4 @@
-.homeRightSideBar-container {
+.homepage_homeRight_homeRightSideBar-container {
   font-family: Arial, sans-serif;
   /* padding: 20px; */
   margin: 1vw;
@@ -11,7 +11,7 @@
   right: 20px; */
 }
 
-.homeRightSideBar-emergencyButton {
+.homepage_homeRight_homeRightSideBar-emergencyButton {
   /* background-color: #f40000; */
   background: linear-gradient(45deg, #E71B1B,#E32626);
   color: #fff;
@@ -25,11 +25,11 @@
   transition: all 0.3s ease-in-out;
 }
 
-.homeRightSideBar-emergencyButton:hover {
+.homepage_homeRight_homeRightSideBar-emergencyButton:hover {
   transform: scale(1.1);
 }
 
-.homeRightSideBar-section {
+.homepage_homeRight_homeRightSideBar-section {
   margin-bottom: 20px;
   margin-top: 8px;
   padding: 8px;
@@ -41,7 +41,7 @@
   backdrop-filter: blur(20px) saturation(0.3);
 }
 
-.homeRightSideBar-hospitalItem {
+.homepage_homeRight_homeRightSideBar-hospitalItem {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -53,7 +53,7 @@
   font-weight: bold;
 }
 
-.homeRightSideBar-rating {
+.homepage_homeRight_homeRightSideBar-rating {
   background: #f0f0f1;
   border-radius: 10px;
   padding: 2px 8px;
@@ -62,7 +62,7 @@
   width: 90px;
 }
 
-.homeRightSideBar-section-button {
+.homepage_homeRight_homeRightSideBar-section-button {
   background: #ccc;
   border: none;
   padding: 10px 20px;
@@ -74,12 +74,12 @@
   transition: all 0.3s ease-in-out;
 }
 
-.homeRightSideBar-section-button:hover {
+.homepage_homeRight_homeRightSideBar-section-button:hover {
   background-color: #bbb;
   transform: scale(1.1);
 }
 
-.homeRightSideBar-section-title {
+.homepage_homeRight_homeRightSideBar-section-title {
   display: flex;
   gap: 10px;
   margin-left: 18px;
@@ -89,9 +89,9 @@
   font-weight: bold;
 }
 
-button:hover{
+.homepage_homeRight_hover:hover{
   transform: scale(1.1);
 }
-.HospitalName:hover{
+.homepage_homeRight_HospitalName:hover{
 text-decoration: underline;
 }
